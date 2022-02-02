@@ -14573,36 +14573,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Submitters">Submitters<a class="anchor-link" href="#Submitters">&#182;</a></h2><table>
-<thead><tr>
-<th style="text-align:center"><strong>Name</strong></th>
-<th style="text-align:center"><strong>ID</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Andrey Shneiderman</td>
-<td style="text-align:center">316900398</td>
-</tr>
-<tr>
-<td style="text-align:center">Alexey Kim</td>
-<td style="text-align:center">316919372</td>
-</tr>
-</tbody>
-</table>
+<h1 id="Building-a-prediction-model-based-on-text-analysis-of-lyrics"><em>Building a prediction model based on text analysis of lyrics</em><a class="anchor-link" href="#Building-a-prediction-model-based-on-text-analysis-of-lyrics">&#182;</a></h1><hr style="height:2px;border-width:0;color:black;background-color:black">
 
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Intro">Intro<a class="anchor-link" href="#Intro">&#182;</a></h3><p>This part of the project is the NLP part, in this part we'll
-try to build a model that will allow prediction of a song's
+<h4 id="Intro">Intro<a class="anchor-link" href="#Intro">&#182;</a></h4><p>This part of the project is the NLP (natural language processing) part.
+We'll try to build a model that will allow prediction of a song's
 genre by the song's lyrics.</p>
 <p>We'll use the lyrics we scraped from the first part of the
 project as the dataset we'll train a model on, and then test
@@ -14635,9 +14609,8 @@ it's accuracy.</p>
 <span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
 
 <span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">RocCurveDisplay</span>
 <span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span><span class="p">,</span> <span class="n">TfidfVectorizer</span><span class="p">,</span> <span class="n">TfidfTransformer</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MaxAbsScaler</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span> <span class="n">GridSearchCV</span>
@@ -15005,11 +14978,12 @@ will work with any classifier that is able to accept sparse matrices and we test
 <h3 id="Model-Choice">Model Choice<a class="anchor-link" href="#Model-Choice">&#182;</a></h3><p>We considered several algorithms; KNN, MultinomialNB, Random Forest, LogisticRegression</p>
 <p>The main requirement for the algorithm was ability to work with sparse matrix produced by TfIdf vectorizer
 We chose 'precision' to be the main scoring for algorithm selection.</p>
-<p>The algorithm that gave highest precision was Logistic Regression.</p>
-<p>MultinomialNB was runner up in second place with just a few percent lower precision than Logistic Regression.
+<p>The algorithm that gave highest precision was <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html">Logistic Regression</a>.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html">MultinomialNB</a> was runner up in second place with just a few percent lower precision than Logistic Regression.
 However it's precision dropped sharply as the number of genres in the dataset increased.</p>
-<p>KNN had far lower precision (around 50%) for our dataset so we decided to drop it early.</p>
-<p>Finally we settled on LogisticRegression algorithm, and tuned it's hyperparameters to reach around 70% precision.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">KNN</a> had far lower precision (around 50%) for our dataset so we decided to drop it early.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">Random Forest</a> had lowest precision (under 40%) which also made us drop it early in the set.</p>
+<p>Finally we settled on LogisticRegression algorithm, and used grid search to tune it's hyperparameters to reach around 70% precision.</p>
 
 </div>
 </div>
@@ -15097,10 +15071,12 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Tuning">Tuning<a class="anchor-link" href="#Tuning">&#182;</a></h3><p>The next part is only relevant during tuning of a model - it uses grid search
+<h3 id="Tuning">Tuning<a class="anchor-link" href="#Tuning">&#182;</a></h3><p>The next section is only relevant during tuning of a model - it uses GridSearchCV
 to find the best parameters.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html">https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html</a></p>
 <p>Due to gridsearch complexity raising combinatorically
-with number of parameters it's more reasonable to test a few parameters(&lt;10) at a time</p>
+with number of parameters it's best to test a few parameters at a time so that
+search time remains reasonably short</p>
 
 </div>
 </div>

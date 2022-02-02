@@ -1,1 +1,102 @@
-index stub
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <title>Data Science Project</title>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">Data Science Project</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="https://github.com/datascience-2022/datascience-2022.github.io">Github</a>
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Project for Data Science class.</h1>
+        <p class="lead">
+            This project aims to explore data science concepts learned during the course in
+            practical application against song lyrics.
+        </p>
+        <p class="text-justify">
+            The project is divided into 2 main parts.
+        </p>
+        <p class="text-justify">
+            Part 1 is web scraping public sites to collect enough lyrics for analysis,
+            including recursing through the site links to reach the required content and parsing HTML
+            to extract the necessary data.
+        </p>
+        <p class="text-justify">
+            Part 2 is text analysis using NLTK library, this aims to build a model that analyses a song's
+            lyrics and predicts the song's genre.
+        </p>
+        <p class="text-justify">
+            As we're not sure on the legal part of distributing scraped data - the lyrics file is encrypted,
+            you'll have to run the web scraper part yourself if you want to build it up. The password will
+            be supplied to the examinators.
+        </p>
+        <p class="text-justify">
+            Please use the .html link if you want to open the notebooks in view-only mode or use the .ipynb links
+            if you would like to download the python notebooks to run them yourselves.
+        </p>
+        <p class="text-justify">
+            Top of the page also contains the link to the github repository containing this page.
+        </p>
+        <p class="lead">
+            <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Part #</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">View article</th>
+                    <th scope="col">Download</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Web scraping</td>
+                    <td><a href="https://datascience-2022.github.io/web-scraping.html">web-scraping.html</a></td>
+                    <td><a href="https://datascience-2022.github.io/web-scraping.ipynb">web-scraping.ipynb</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Text analysis</td>
+                    <td><a href="https://datascience-2022.github.io/text-analysis.html">text-analysis.html</a></td>
+                    <td><a href="https://datascience-2022.github.io/text-analysis.ipynb">text-analysis.ipynb</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">-</th>
+                    <td>Encrypted lyrics archive</td>
+                    <td>-</td>
+                    <td><a href="https://datascience-2022.github.io/lyrics.7z">lyrics.7z</a></td>
+                  </tr>
+                </tbody>
+              </table>
+        </p>
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+            Andrew Shneiderman, Alexey Kim<br />
+            For Data Science course in Holon Institute of Technology
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
